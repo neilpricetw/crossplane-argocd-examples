@@ -39,7 +39,7 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 2. Add a new repository
 3. Add a new application
 4. Select your repository you added in step 2
-5. Set the path to the application you want to deploy (e.g. `example-voting-app`)
+5. Set the path to the application you want to deploy (e.g. `helm/example-voting-app`)
 6. Set the target namespace
 7. Click "Create"
 8. Wait for the application to sync
