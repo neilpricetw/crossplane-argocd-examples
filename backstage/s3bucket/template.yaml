@@ -43,6 +43,7 @@ spec:
           owner: ${{ parameters.owner }}
           region: ${{ parameters.region }}
           environment: ${{ parameters.environment }}
+        targetPath: "argocd/s3-buckets/${{ parameters.bucketName }}"          
 
     - id: publish
       name: Push to GitOps Repo
@@ -50,8 +51,6 @@ spec:
       input:
         description: "Manifests for S3 Bucket: ${{ parameters.bucketName }}"
         repoUrl: "github.com?owner=neilpricetw&repo=crossplane-argocd-examples"
-        # We push to a specific folder so ArgoCD can pick it up
-        gitDir: "argocd/s3-buckets/${{ parameters.bucketName }}"
 
     - id: register
       name: Register in Backstage
