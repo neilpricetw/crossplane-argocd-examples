@@ -3,6 +3,10 @@ on:
   pull_request:
     types: [opened, synchronized]
 
+permissions:
+  contents: write
+  pull-requests: write    
+
 jobs:
   automerge:
     runs-on: ubuntu-latest
