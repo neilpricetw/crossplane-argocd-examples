@@ -1,0 +1,11 @@
+region: "ap-southeast-2"
+environment: "dev"
+namespace: "default"
+
+lambda:
+  name: "newlambda"
+  iamExecRole: "arn:aws:iam::160071257600:role/newlambda-role"
+  handler: "index.handler"
+  runtime: "nodejs18.x"
+  s3Bucket: "aws-s3-chart-nptest137496223dsf"
+  s3Key: "hello-world.zip"
