@@ -1,0 +1,62 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: s3-bucket-template
+  title: S3 Bucket (Crossplane)
+  description: Provision a secure AWS S3 bucket using Helm and Crossplane.
+spec:
+  owner: guests
+  type: infrastructure
+
+  parameters:
+    - title: Bucket Configuration
+      required: [bucketName, owner, region, environment]
+      properties:
+        bucketName:
+          title: Bucket Name
+          type: string
+          description: Must be globally unique.
+          ui:autofocus: true
+        owner:
+          title: Owner
+          type: string
+          ui:field: OwnerPicker
+        region:
+          title: AWS Region
+          type: string
+          default: ap-southeast-1
+          enum: [us-east-1, ap-southeast-1]
+        environment:
+          title: Environment
+          type: string
+          default: dev
+          enum: [dev, test, prod]
+
+  steps:
+    - id: fetch-base
+      name: Render Helm Chart
+      action: fetch:template
+      input:
+        url: ./skeleton
+        values:
+          bucketName: ${{ parameters.bucketName }}
+          owner: ${{ parameters.owner }}
+          region: ${{ parameters.region }}
+          environment: ${{ parameters.environment }}
+
+    - id: publish
+      name: Push to GitOps Repo
+      action: publish:github
+      input:
+        allowedHosts: ['github.com']
+        description: "Manifests for S3 Bucket: ${{ parameters.bucketName }}"
+        repoUrl: "github.com?owner=neilpricetw&repo=crossplane-argocd-examples"
+        # We push to a specific folder so ArgoCD can pick it up
+        targetPath: "argocd/s3-buckets/${{ parameters.bucketName }}"
+
+    - id: register
+      name: Register in Backstage
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'

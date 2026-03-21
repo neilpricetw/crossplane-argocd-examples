@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ${{ values.bucketName }}
+  description: "S3 Bucket provisioned via Backstage for ${{ values.owner }}"
+  links:
+    - title: AWS Console
+      url: https://s3.console.aws.amazon.com/s3/buckets/${{ values.bucketName }}
+spec:
+  type: s3-storage
+  owner: ${{ values.owner }}
+  lifecycle: production
