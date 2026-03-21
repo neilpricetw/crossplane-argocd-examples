@@ -48,11 +48,10 @@ spec:
       name: Push to GitOps Repo
       action: publish:github
       input:
-        allowedHosts: ['github.com']
         description: "Manifests for S3 Bucket: ${{ parameters.bucketName }}"
         repoUrl: "github.com?owner=neilpricetw&repo=crossplane-argocd-examples"
         # We push to a specific folder so ArgoCD can pick it up
-        targetPath: "argocd/s3-buckets/${{ parameters.bucketName }}"
+        gitDir: "argocd/s3-buckets/${{ parameters.bucketName }}"
 
     - id: register
       name: Register in Backstage
