@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ewfew239h8d3
+  description: "S3 Bucket provisioned via Backstage for group:default/guests"
+  links:
+    - title: AWS Console
+      url: https://s3.console.aws.amazon.com/s3/buckets/ewfew239h8d3
+spec:
+  type: s3-storage
+  owner: group:default/guests
+  lifecycle: production
