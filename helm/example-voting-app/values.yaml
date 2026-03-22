@@ -6,6 +6,8 @@ image:
 service:
   type: ClusterIP
   port: 80
+backstage:
+  label: examples-voting-service
 
 # Redis Configuration
 redis:

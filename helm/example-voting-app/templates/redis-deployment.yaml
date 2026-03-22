@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis
+  labels:
+    backstage.io/kubernetes-id: {{ .Values.backstage.label }} 
 spec:
   selector:
     matchLabels:
@@ -10,6 +12,7 @@ spec:
     metadata:
       labels:
         app: redis
+        backstage.io/kubernetes-id: {{ .Values.backstage.label }}      
     spec:
       containers:
       - name: redis
