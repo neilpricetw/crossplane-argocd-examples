@@ -91,16 +91,16 @@ spec:
 apiVersion: ec2.aws.m.upbound.io/v1beta1
 kind: Subnet
 metadata:
-  name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-{{ .Values.region }}a
+  name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-subnet-{{ .Values.region }}a
   labels:
-    name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-{{ .Values.region }}a
+    name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-subnet-{{ .Values.region }}a
 spec:
   forProvider:
     availabilityZone: {{ .Values.region }}a
     cidrBlock: {{ .Values.vpc.subnet_public_a_cidrBlock }}
     region: {{ .Values.region }}
     tags:
-      Name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-{{ .Values.region }}a
+      Name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-subnet-{{ .Values.region }}a
       ManagedBy: Crossplane 
     vpcIdRef:
       name: {{ .Values.vpc.name }}-{{ .Values.environment }}-{{ .Values.region }}        
@@ -108,16 +108,16 @@ spec:
 apiVersion: ec2.aws.m.upbound.io/v1beta1
 kind: Subnet
 metadata:
-  name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-{{ .Values.region }}b
+  name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-subnet-{{ .Values.region }}b
   labels:
-    name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-{{ .Values.region }}b
+    name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-subnet-{{ .Values.region }}b
 spec:
   forProvider:
     availabilityZone: {{ .Values.region }}b
     cidrBlock: {{ .Values.vpc.subnet_public_b_cidrBlock }}
     region: {{ .Values.region }}
     tags:
-      Name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-{{ .Values.region }}b
+      Name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-subnet-{{ .Values.region }}b
       ManagedBy: Crossplane 
     vpcIdRef:
       name: {{ .Values.vpc.name }}-{{ .Values.environment }}-{{ .Values.region }}        
@@ -218,4 +218,4 @@ spec:
     routeTableIdRef:
       name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-routetable-{{ .Values.region }}
     subnetIdRef:
-      name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-subnet-{{ .Values.region }}b           
+      name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-subnet-{{ .Values.region }}b
