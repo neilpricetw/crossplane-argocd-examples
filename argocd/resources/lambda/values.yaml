@@ -7,5 +7,5 @@ lambda:
   iamExecRole: "arn:aws:iam::160071257600:role/newlambda-role"
   handler: "index.handler"
   runtime: "nodejs18.x"
-  s3Bucket: "s3-buckets-nptest137496223dsf"
+  s3Bucket: "nptemp11223"
   s3Key: "hello-world.zip"
