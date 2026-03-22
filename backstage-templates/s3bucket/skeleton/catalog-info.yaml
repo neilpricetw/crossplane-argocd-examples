@@ -10,3 +10,4 @@ spec:
   type: s3-storage
   owner: ${{ values.owner }}
   lifecycle: production
+  system: ${{ values.systemName }}

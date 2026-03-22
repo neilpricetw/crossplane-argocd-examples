@@ -31,6 +31,14 @@ spec:
           type: string
           default: dev
           enum: [dev, test, prod]
+        systemName:
+          title: System
+          type: string
+          description: The system this bucket belongs to (e.g., 'order-management')
+          ui:field: EntityPicker
+          ui:options:
+            allowedKinds:
+              - System          
 
   steps:
     - id: fetch-base
@@ -43,6 +51,7 @@ spec:
           owner: ${{ parameters.owner }}
           region: ${{ parameters.region }}
           environment: ${{ parameters.environment }}
+          systemName: ${{ parameters.systemName }}          
         targetPath: "argocd/resources/backstage-s3buckets"          
 
     - id: publish
