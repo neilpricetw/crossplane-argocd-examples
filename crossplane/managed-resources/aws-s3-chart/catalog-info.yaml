@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: Resource
 metadata:
-  name: s3bucket
+  name: s3bucket-argocd-sync-demo
   annotations:
     backstage.io/kubernetes-id: s3bucket
     backstage.io/techdocs-ref: dir:.

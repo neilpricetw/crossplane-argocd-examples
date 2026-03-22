@@ -24,8 +24,8 @@ spec:
         region:
           title: AWS Region
           type: string
-          default: ap-southeast-1
-          enum: [us-east-1, ap-southeast-1]
+          default: ap-southeast-2
+          enum: [us-east-1, ap-southeast-1, ap-southeast-2]
         environment:
           title: Environment
           type: string
