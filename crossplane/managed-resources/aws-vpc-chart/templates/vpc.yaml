@@ -182,7 +182,7 @@ spec:
     routeTableIdRef:
       name: {{ .Values.vpc.name }}-{{ .Values.environment }}-private-routetable-{{ .Values.region }}
     subnetIdRef:
-      name: {{ .Values.vpc.name }}-{{ .Values.environment }}-private-routetable-{{ .Values.region }}a        
+      name: {{ .Values.vpc.name }}-{{ .Values.environment }}-private-subnet-{{ .Values.region }}a        
 ---
 apiVersion: ec2.aws.m.upbound.io/v1beta1
 kind: RouteTableAssociation
@@ -194,7 +194,7 @@ spec:
     routeTableIdRef:
       name: {{ .Values.vpc.name }}-{{ .Values.environment }}-private-routetable-{{ .Values.region }}
     subnetIdRef:
-      name: {{ .Values.vpc.name }}-{{ .Values.environment }}-private-routetable-{{ .Values.region }}b        
+      name: {{ .Values.vpc.name }}-{{ .Values.environment }}-private-subnet-{{ .Values.region }}b        
 ---
 apiVersion: ec2.aws.m.upbound.io/v1beta1
 kind: RouteTableAssociation
@@ -206,7 +206,7 @@ spec:
     routeTableIdRef:
       name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-routetable-{{ .Values.region }}
     subnetIdRef:
-      name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-routetable-{{ .Values.region }}a        
+      name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-subnet-{{ .Values.region }}a        
 ---
 apiVersion: ec2.aws.m.upbound.io/v1beta1
 kind: RouteTableAssociation
@@ -218,4 +218,4 @@ spec:
     routeTableIdRef:
       name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-routetable-{{ .Values.region }}
     subnetIdRef:
-      name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-routetable-{{ .Values.region }}b           
+      name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-subnet-{{ .Values.region }}b           
