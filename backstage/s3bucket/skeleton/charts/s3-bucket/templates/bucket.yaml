@@ -1,14 +1,14 @@
 apiVersion: s3.aws.m.upbound.io/v1beta1
 kind: Bucket
 metadata:
-  name: ${{ .Values.bucketName }}
+  name: ${{ values.bucketName }}
   namespace: default
 spec:
   forProvider:
-    region: ${{ .Values.region }}
+    region: ${{ values.region }}
     forceDestroy: true
     tags:
-      Environment: ${{ .Values.environment }}
+      Environment: ${{ values.environment }}
       ManagedBy: Crossplane    
   providerConfigRef:
     name: default
