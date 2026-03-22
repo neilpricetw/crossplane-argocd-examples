@@ -175,7 +175,7 @@ spec:
 apiVersion: ec2.aws.m.upbound.io/v1beta1
 kind: RouteTableAssociation
 metadata:
-  name: {{ .Values.vpc.name }}-{{ .Values.environment }}-private-routetable-{{ .Values.region }}a
+  name: {{ .Values.vpc.name }}-{{ .Values.environment }}-private-routetableassociation-{{ .Values.region }}a
 spec:
   forProvider:
     region: {{ .Values.region }}
@@ -187,7 +187,7 @@ spec:
 apiVersion: ec2.aws.m.upbound.io/v1beta1
 kind: RouteTableAssociation
 metadata:
-  name: {{ .Values.vpc.name }}-{{ .Values.environment }}-private-routetable-{{ .Values.region }}b
+  name: {{ .Values.vpc.name }}-{{ .Values.environment }}-private-routetableassociation-{{ .Values.region }}b
 spec:
   forProvider:
     region: {{ .Values.region }}
@@ -199,7 +199,7 @@ spec:
 apiVersion: ec2.aws.m.upbound.io/v1beta1
 kind: RouteTableAssociation
 metadata:
-  name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-routetable-{{ .Values.region }}a
+  name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-routetableassociation-{{ .Values.region }}a
 spec:
   forProvider:
     region: {{ .Values.region }}
@@ -211,7 +211,7 @@ spec:
 apiVersion: ec2.aws.m.upbound.io/v1beta1
 kind: RouteTableAssociation
 metadata:
-  name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-routetable-{{ .Values.region }}b
+  name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-routetableassociation-{{ .Values.region }}b
 spec:
   forProvider:
     region: {{ .Values.region }}
