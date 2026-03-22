@@ -1,8 +1,10 @@
 apiVersion: lambda.aws.m.upbound.io/v1beta1
 kind: Function
 metadata:
-  name: {{ .Values.lambda.name }}-{{ .Values.environment }}
+  name: {{ .Values.lambda.name }}
   namespace: {{ .Values.namespace }}  
+  labels:
+    backstage.io/kubernetes-id: {{ .Values.lambda.name }}    
 spec:
   forProvider:
     region: {{ .Values.region }}
