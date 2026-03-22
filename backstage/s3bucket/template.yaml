@@ -43,7 +43,7 @@ spec:
           owner: ${{ parameters.owner }}
           region: ${{ parameters.region }}
           environment: ${{ parameters.environment }}
-        targetPath: "argocd/s3-buckets/${{ parameters.bucketName }}"          
+        targetPath: "argocd/resources/backstage-s3-buckets"          
 
     - id: publish
       name: Create Pull Request in GitOps Repo
