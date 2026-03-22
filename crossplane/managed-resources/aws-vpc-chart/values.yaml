@@ -4,8 +4,8 @@ providerConfigName: "default"
 namespace: "default"
 
 vpc:
-  id: "newvpc"
-  name: "newvpc"
+  id: "neilvpc"
+  name: "neilvpc"
   cidrBlock: "10.100.0.0/16"
   subnet_private_a_cidrBlock: "10.100.1.0/24"
   subnet_private_b_cidrBlock: "10.100.2.0/24"

@@ -29,8 +29,7 @@ spec:
     tags:
       Name: {{ .Values.ec2.name }}-{{ .Values.environment }}-sg-{{ .Values.region }}
       ManagedBy: Crossplane
-    vpcIdRef:
-      name: {{ .Values.ec2.vpcId }}
+    vpcId: {{ .Values.ec2.vpcId }}
 ---
 apiVersion: ec2.aws.m.upbound.io/v1beta1
 kind: SecurityGroupRule

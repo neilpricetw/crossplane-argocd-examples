@@ -37,7 +37,7 @@ spec:
       name: {{ .Values.vpc.name }}-{{ .Values.environment }}-eip-{{ .Values.region }}
     subnetIdSelector:
       matchLabels:
-        name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-{{ .Values.region }}a
+        name: {{ .Values.vpc.name }}-{{ .Values.environment }}-public-subnet-{{ .Values.region }}a
     tags:
       Name: {{ .Values.vpc.name }}-{{ .Values.environment }}-nat-{{ .Values.region }}        
 ---
